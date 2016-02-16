@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"
+          href="index.css">
+</head>
+<body>
+<div class="properties">
+    <div>
+        <p class="block-title">Язык:</p>
+
+        <div class="block-variants">
+            <input type="radio"
+                   name="lang"
+                   id="rus"
+                   checked="checked"
+                   onclick="data.setData(this.name, this.id)">
+            <label for="rus">Русский</label><br>
+            <input type="radio"
+                   name="lang"
+                   id="ukr"
+                   onclick="data.setData(this.name, this.id)">
+            <label for="ukr">Украинский</label>
+        </div>
+    </div>
+
+    <div>
+        <p class="block-title">Размеры:</p>
+
+        <div class="block-variants">
+            <label for="width">Ширина:</label>
+            <input type="number"
+                   id="width"
+                   step="10"
+                   min="50"
+                   value="300"
+                   onchange="data.setData(this.id, this.value)"><br>
+            <label for="height">Высота:</label>
+            <input type="number"
+                   id="height"
+                   step="10"
+                   value="100"
+                   min="50"
+                   onchange="data.setData(this.id, this.value)">
+        </div>
+    </div>
+
+    <div>
+        <p class="block-title">Оформление:</p>
+
+        <div class="block-variants">
+            <input type="checkbox"
+                   id="opacity"
+                   checked="checked"
+                   onclick="data.setData(this.id, !this.checked)">
+            <label for="opacity">Фон</label><br>
+
+            <input type="checkbox"
+                   id="withPicture"
+                   checked="checked"
+                   onclick="data.setData(this.id, this.checked)">
+            <label for="withPicture">Рисунок</label><br>
+
+            <label class="color"
+                   for="backgroundColor">Цвет фона:</label>
+            <input class="color"
+                   type="color"
+                   value="#ffffff"
+                   id="backgroundColor"
+                   onchange="data.setData(this.id, this.value)">
+        </div>
+    </div>
+
+    <div class='pictures'>
+        <p class="block-title">Рисунок:</p>
+
+        <div class="block-variants"></div>
+    </div>
+
+    <div class="names">
+        <p class="block-title">Тип:</p>
+
+        <div class="block-variants"></div>
+    </div>
+</div>
+<img src=""
+     id="preview">
+<button onclick="data.getLink()">Получить код</button>
+<textarea id="link"></textarea>
+<script src="index.js"></script>
+</body>
+</html>
